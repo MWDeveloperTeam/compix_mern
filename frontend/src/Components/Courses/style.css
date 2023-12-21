@@ -1,0 +1,33 @@
+.slick-arrow.slick-prev
+ {
+    left: 1rem;
+    z-index: 1;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.card_container .slick-arrow.slick-next {
+    right: 4rem;
+    z-index: 1;
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.card_container .slick-prev:before , .card_container .slick-next:before{
+    display: none;
+}
+
+/* Slick Dots Style */
+
+.slick-dots {
+    bottom: 15px;
+    z-index: 1;
+}
+
+.slick-dots li button:before {
+    font-size: 1rem;
+}
+
+.slick-dots li {
+    margin-left: 20px;
+}

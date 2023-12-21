@@ -1,0 +1,12 @@
+export { default as QuizModel } from "../Pages/Quiz/QuizModel";
+export { default as Quiz } from "../Pages/Quiz/Quiz";
+export { default as QuizResult } from "../Pages/Quiz/QuizResult";
+export { default as Dashboard } from "../Pages/Dashboard/AdminDashboard";
+export { default as Register } from "../Pages/students/RegisterStudent";
+export { default as Login } from "../Pages/Login/Login";
+export { default as ViewStudents } from "../Pages/students/ViewAllStudents";
+export { default as Page_Not_Found } from "../Pages/404/PageNotFound";
+export { default as Create_Fee } from "../Pages/Fee/FeeCreate";
+export { default as FeeHistory } from "../Pages/Fee/FeeHistory";
+export { default as Fee } from "../Pages/Fee/Fee";
+export { default as PleaseLogin } from "../Pages/RedirctPage/PleaseLogin";

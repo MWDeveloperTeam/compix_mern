@@ -1,0 +1,12 @@
+export { default as Menu } from "../Components/Menu/Menu";
+export { default as Helper } from "../Components/Helper/Helper";
+export { default as ImageSlider } from "../Components/ImageSlider/ImageSlider";
+export { default as Courses } from "../Components/Courses/Courses";
+export { default as About } from "../Components/About/About";
+export { default as Placements } from "../Components/Placements/Placements";
+export { default as Gallery } from "../Components/Gallery/Gallery";
+export { default as SuccessReport } from "../Components/SuccessReport/SuccessReport";
+export { default as Testimonial } from "../Components/Testimonial/Testimonial";
+export { default as Contact } from "../Components/Contact/Contact";
+export { default as Top } from "../Components/GoToTop/Top";
+export { default as Footer } from "../Components/Footer/Footer";

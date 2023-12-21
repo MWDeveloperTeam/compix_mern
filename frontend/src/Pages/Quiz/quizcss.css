@@ -1,0 +1,125 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 400px;
+  /* height: auto; */
+  width: 70%;
+  height: auto;
+  background-color: white;
+  border-radius: 0.4rem;
+  /* box-shadow: 2px 2px 10px 1px rgb(102, 3, 102); */
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.quiz_header_wrapper {
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: .2rem solid #130f40;
+}
+
+.heading-txt {
+  padding: 1rem;
+  color: #130f40;
+  font-size: 1.6rem;
+  text-transform: capitalize;
+}
+
+.timer_wrapper {
+  background-color: #27374d;
+  padding: 8px 30px;
+  color: #fff;
+  border-radius: 30px;
+}
+.question {
+  width: 100%;
+  /* box-shadow: 0px 0px 10px 1px #a2a3a3; */
+  padding: 1.6rem;
+  font-size: large;
+  font-weight: 600;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+#question-number {
+  margin-right: 5px;
+}
+.option-container {
+  display: flex;
+  flex-direction: column;
+  /* margin: 6px 4px; */
+  /* background-color: red; */
+  width: 100%;
+  padding: 10px;
+}
+/* .option-container input{
+  visibility: hidden;    
+} */
+.option-btn {
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 1.4rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  transition: 0.3s;
+  margin: 5px;
+  background-color: white;
+  font-size: 1.6rem;
+}
+
+.checked {
+  background-color: #2c3e50;
+  color: white;
+  /* box-shadow: 3px 3px 4px 1px rgb(78, 69, 78); */
+}
+.option-btn:hover {
+  /* background-color: rgb(212, 118, 212); */
+  background-color: #2c3e50;
+  color: white;
+  cursor: pointer;
+}
+
+.next_button_wrapper {
+  width: 100%;
+  /* background-color: red !important; */
+  padding: 1.4rem;
+  display: flex;
+  gap: 10px;
+}
+
+#next-button {
+  max-width: 20rem;
+  width: 100%;
+  padding: 1.4rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  background-color: #27374d;
+  color: white;
+  border-radius: 3rem;
+  transition: 0.2s;
+}
+
+#next-button:hover {
+  background-color: #e68300;
+}
+
+.show-score {
+  font-size: 40px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}

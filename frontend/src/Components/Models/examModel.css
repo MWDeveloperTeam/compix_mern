@@ -1,0 +1,111 @@
+.exam_model_container {
+  font-size: 1.6rem;
+  z-index: 99;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: rgb(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  -webkit-animation: exam_model_container 0.3s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: exam_model_container 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.exam_model_wrraper {
+  width: 100%;
+  background-color: #fdfdfd;
+  max-width: 40rem;
+  height: auto;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+@-webkit-keyframes exam_model_container {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes exam_model_container {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.exam_model_wrraper_header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.exam_model_wrraper_header button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.exam_model_wrraper_header button svg {
+  color: #e68300;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: ease-in-out .3s;
+}
+
+.exam_model_wrraper_header button svg:hover {
+  color: #27374d;
+}
+
+.exam_model_wrraper_inputs {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.user_details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+#exam_name {
+  padding: 1rem;
+  outline: none;
+  border: 0.1rem solid #27374d;
+  border-radius: 0.4rem;
+}
+
+.submit_button {
+  padding: 1rem;
+  outline: none;
+  background-color: #27374d;
+  border-radius: 0.4rem;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.create_exam {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
