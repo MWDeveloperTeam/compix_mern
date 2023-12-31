@@ -20,6 +20,8 @@ const CreateExam = ({ close, userData }) => {
     "javascript",
   ];
 
+  
+
   const submitHandler = async () => {
     setLoader(true);
     if (course === "choose" || course === "") {
@@ -29,7 +31,7 @@ const CreateExam = ({ close, userData }) => {
     } else {
       try {
         const res = await useCreateExam(
-          `http://localhost:8000/api/v1/studets/${userData?._id}`,
+          `http://localhost:8000/api/v1/students/${userData?._id}`,
           {
             examCourse: course,
           }

@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import { Link as Links } from "react-scroll";
 import { Link } from "react-router-dom";
-import { gsap, Power3 } from "gsap";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import SideMenu from "../SideMenu/SideMenu";
 import { Constant } from "../../constant/index";
@@ -11,20 +10,7 @@ import logo from "../../Media/logo.png";
 
 const Menu = () => {
   const api = useContext(Store);
-  // let menucontainer = useRef(null);
-  // let timeline = new gsap.timeline();
-  // let ease = Power3.easeOut();
-  // let logo_con = useRef(null);
-  // let menuList = useRef([]);
-  // menuList.current = [];
 
-  // const lst = (el) => {
-  //   if (!menuList.current.includes(el)) {
-  //     menuList.current.push(el);
-  //   }
-  // };
-
-  
   const [dialogToggle, setDialogToggle] = useState(false);
   const [toggle, setToggle] = useState(false);
   const [classAdd, setClassAdd] = useState("home");
@@ -37,7 +23,6 @@ const Menu = () => {
       setWindowWidth(window.innerWidth);
     };
     window.addEventListener("resize", sliderfunc);
-  
   }, []);
 
   const toggleHandler = () => {
@@ -60,10 +45,7 @@ const Menu = () => {
       </div>
       <div className="logo_container">
         <Link to="/">
-          <img
-            src={logo}
-            alt="website logo"
-          />
+          <img src={logo} alt="website logo" />
         </Link>
       </div>
       <div className="menu_container">
@@ -113,7 +95,7 @@ const MenuSection = styled.section`
   font-family: ${Constant.Fonts.primaryFont};
   position: fixed;
   top: 0;
-  z-index: 9622656564;
+  z-index: 10;
   backdrop-filter: blur(20px);
 
   /* sideBar Style */
@@ -264,5 +246,3 @@ const MenuSection = styled.section`
     }
   }
 `;
-
-const array = ["dssds", 500, "ghghg"];

@@ -10,3 +10,4 @@ export { default as Create_Fee } from "../Pages/Fee/FeeCreate";
 export { default as FeeHistory } from "../Pages/Fee/FeeHistory";
 export { default as Fee } from "../Pages/Fee/Fee";
 export { default as PleaseLogin } from "../Pages/RedirctPage/PleaseLogin";
+export { default as Exam_guides } from "../Pages/Quiz/Exam_guides";

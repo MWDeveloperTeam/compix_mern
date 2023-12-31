@@ -7,9 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "./style.css";
 import { Link as ScrollLink } from "react-scroll";
 import { LeftButton } from "./Buttons";
-// import AOS from 'aos';
-// import 'aos/dist/aos.css'
-// AOS.init();
 import { Store } from "../../StateStore";
 
 const ImageSlider = () => {
@@ -17,9 +14,9 @@ const ImageSlider = () => {
   const sliderRef = useRef(null);
   return (
     <div className="image_slider_container" id="home">
-      <Slider dots infinite autoplay autoplaySpeed={2000} ref={sliderRef}>
+      <Slider infinite autoplay autoplaySpeed={2000} ref={sliderRef}>
         {api?.api?.imglinks?.map((img) => (
-          <div className="img_container" key={img._id}>
+          <div className="img_container" key={img._id} data-tilt>
             <img src={img?.links} alt={img.title} />
           </div>
         ))}

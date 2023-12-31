@@ -5,7 +5,8 @@ import ReusableHeader from "../Reusable/ReusableHeader";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Store } from "../../StateStore";
-import aboutImage from "../../Media/img1.png";
+import aboutImage from "../../Media/main.gif";
+import { Constant } from "../../constant";
 
 const About = () => {
   const { api } = useContext(Store);
@@ -22,6 +23,8 @@ const About = () => {
           skills through most advanced tools and technologies with the help of
           expert faculty."
         hText="Who we are"
+        hColor={Constant.Colors.seconderyColor}
+        pColor={Constant.Colors.mainColor}
       />
       <div className="content_container">
         <div className="content">
@@ -46,7 +49,7 @@ const About = () => {
         </div>
         <div className="img_container">
           <figure>
-            <img src={aboutImage} alt="about_background" />
+            <img src={aboutImage} alt="about_background" loading="lazy"/>
           </figure>
         </div>
       </div>

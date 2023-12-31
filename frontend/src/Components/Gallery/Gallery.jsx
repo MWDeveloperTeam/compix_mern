@@ -12,8 +12,8 @@ const ImageGallery = () => {
         pText={
           "With clean enviornment and expert faculty, we create professionals for tomorrow."
         }
-        hColor={"#fff"}
-        pColor="#fff"
+        hColor={Constant.Colors.seconderyColor}
+        pColor="#000000"
       />
       <ImageGalleryRes />
     </Section>
@@ -26,7 +26,7 @@ const Section = styled.section`
   font-family: ${Constant.Fonts.primaryFont};
   height: auto;
   padding: 7rem 10rem;
-  background-color: ${Constant.Colors.mainColor};
+  background-color: ${Constant.Colors.lightBackgroundColor};
 
   .gallery_container {
     padding-top: 3rem;

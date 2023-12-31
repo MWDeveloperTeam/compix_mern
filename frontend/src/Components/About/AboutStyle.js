@@ -6,7 +6,7 @@ export const Section = styled.section`
   /* clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 94%); */
   height: auto;
   padding: 7rem 10rem;
-  background-color: ${Constant.Colors.mainColor};
+  background-color: ${Constant.Colors.lightBackgroundColor};
   font-family: ${Constant.Fonts.primaryFont};
   .about_heading_container {
     h1 {
@@ -38,21 +38,23 @@ export const Section = styled.section`
     /* background-color: blue; */
     display: flex;
     .content {
+
+      flex: 1;
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      padding: 2rem 0;
+      padding: 2rem 3rem 2rem 0;
 
       h1 {
         font-size: 2.8rem;
-        color: #fff;
+        color: ${Constant.Colors.mainColor};
         border-bottom: 0.1rem solid #fff;
         padding-bottom: 1.5rem;
       }
 
       p {
         font-size: 1.5rem;
-        color: #f2f2f2;
+        color:${Constant.Colors.mainColor};
       }
     }
 
@@ -63,7 +65,7 @@ export const Section = styled.section`
       gap: 1rem;
       font-size: 1.7rem;
       margin-top: 3rem;
-      color: #fff;
+      color: ${Constant.Colors.mainColor};
       text-transform: capitalize;
       svg {
         margin-right: 1.5rem;
@@ -74,15 +76,19 @@ export const Section = styled.section`
   }
 
   .img_container {
+    flex: 1;
     /* background-color: red; */
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
     /* position: relative; */
     figure {
+      height: 100%;
+      /* background-color: red; */
       img {
-        width: 400px;
-        /* width: inherit; */
+        width: 100%; 
+        height: 100%;
+        object-fit: cover;
       }
     }
   }
@@ -107,6 +113,7 @@ export const Section = styled.section`
 
     .content_container {
       display: flex;
+      gap: 1.6rem;
       .content {
         padding: 2rem 0;
 
@@ -131,10 +138,10 @@ export const Section = styled.section`
     }
 
     .img_container {
-      width: 30%;
+      /* width: 30%; */
       figure {
         img {
-          width: 28rem;
+          /* width: 28rem; */
         }
       }
     }
@@ -194,7 +201,7 @@ export const Section = styled.section`
       width: 100%;
       figure {
         img {
-          width: 20rem;
+          /* width: 20rem; */
         }
       }
     }

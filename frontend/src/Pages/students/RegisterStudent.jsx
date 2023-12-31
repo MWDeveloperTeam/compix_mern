@@ -37,6 +37,7 @@ const RegisterStudent = () => {
   formData.append("photo", selectedFile);
 
   const onSubmit = async (data) => {
+    console.log(data);
     if (selectedFile === undefined || selectedFile === null) {
       errorAlert("Please Upload Photo");
       setSubmitting(false);

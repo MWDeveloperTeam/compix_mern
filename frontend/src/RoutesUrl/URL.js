@@ -11,4 +11,5 @@ export const URL = {
   Create_Fee: "createfee",
   Fee_History: "feehistory",
   Fee: "fee",
+  Exam_guides: '/guides'
 };

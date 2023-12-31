@@ -48,7 +48,7 @@ const AdminDashboard = () => {
 export default AdminDashboard;
 
 const Section = styled.section`
-position: relative;
+  position: relative;
   font-family: ${Constant.Fonts.primaryFont};
   display: flex;
   flex-direction: column;

@@ -74,33 +74,20 @@ const Courses = () => {
           hColor={Constant.Colors.seconderyColor}
           pColor="#222"
         />
-        <div className="button_container">
-          {sliderHandle > 768 && (
-            <Button coursesSliderProp={coursesSliderRef} />
-          )}
-        </div>
       </div>
       <div className="card_container" style={{ paddingTop: "3rem" }}>
-        <Slider {...SliderSetting}>
-          {api.courses.map((curElem) => {
-            return (
-              <div
-                style={{ padding: "1rem", backgroundColor: "red" }}
-                key={curElem._id}
-              >
-                <Card
-                  curElem={curElem}
-                  isOpenCourseModel={isOpenCourseModel}
-                  ModelHandlerFunc={ModelHandlerFunc}
-                />
-              </div>
-            );
-          })}
-        </Slider>
+        {api.courses.map((curElem, i) => {
+          return (
+            <Card
+              key={i}
+              curElem={curElem}
+              isOpenCourseModel={isOpenCourseModel}
+              ModelHandlerFunc={ModelHandlerFunc}
+            />
+          );
+        })}
       </div>
-      <div className="botton_course_slider_handle">
-        {sliderHandle < 768 && <Button coursesSliderProp={coursesSliderRef} />}
-      </div>
+
       {isOpenCourseModel ? (
         <CourseModex label={courseData} ModelHandlerFunc={ModelHandlerFunc} />
       ) : null}

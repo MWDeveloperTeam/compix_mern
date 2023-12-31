@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, json, useNavigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import DataTable from "react-data-table-component";
 import { BiShow, BiEdit } from "react-icons/bi";
@@ -23,8 +23,11 @@ const ViewAllStudents = () => {
   const [loader, setLoader] = useState(false);
   const [search, setSearch] = useState("");
   const [feeSearch, setFeeSearch] = useState("");
+  const [examSearch, setExamSearch] = useState("");
   const [students, setStudents] = useState([]);
   const [fee, setFee] = useState([]);
+  const [exams, setExams] = useState([]);
+  const [filterExams, setFilterExams] = useState([]);
   const [filterStudents, setFilterStudents] = useState([]);
   const [feeFilterStudents, setFeeFilterStudents] = useState([]);
   const [viweModel, setViewModel] = useState(false);
@@ -39,6 +42,9 @@ const ViewAllStudents = () => {
     try {
       const res = await axios.get("http://localhost:8000/api/v1/students");
       const fee_res = await axios.get("http://localhost:8000/api/v1/fees");
+      const exam_res = await axios.get("http://localhost:8000/api/v1/exam");
+      setExams(exam_res.data.data);
+      setFilterExams(exam_res.data.data);
       setStudents(res.data.data);
       setFee(fee_res.data.data);
       setFilterStudents(res.data.data);
@@ -255,6 +261,92 @@ const ViewAllStudents = () => {
     },
   ];
 
+  const examColumns = [
+    {
+      name: "#",
+      selector: (row, index) => index + 1,
+      sortable: true,
+    },
+    {
+      name: "Photo",
+      cell: (row) => (
+        <div style={{ display: "flex" }}>
+          <img
+            style={{ borderRadius: "50%", width: "35px" }}
+            src={row?.stdId?.photo}
+            alt="Photo"
+          />
+        </div>
+      ),
+    },
+    {
+      name: " Name",
+      selector: (row) => row?.stdId?.firstName?.toUpperCase(),
+      sortable: true,
+    },
+    {
+      name: "Address",
+      selector: (row) => row?.stdId?.address?.toUpperCase(),
+    },
+    {
+      name: "E-mail",
+      selector: (row) => row?.stdId?.email?.toUpperCase(),
+    },
+    {
+      name: "Course",
+      selector: (row) => row?.course?.toUpperCase(),
+    },
+    {
+      name: "Action",
+      cell: (row) => (
+        <div style={{ display: "flex", gap: "6px" }}>
+          <button style={actionStyle}>
+            <BiShow
+              style={actionStyle.bottonStyle}
+              onClick={() => {
+                navigate(URL.Result, {
+                  state: {
+                    data: row,
+                  },
+                });
+              }}
+            />
+          </button>
+          <button style={actionStyle}>
+            <MdDelete
+              style={actionStyle.bottonStyle}
+              onClick={async () => {
+                try {
+                  setLoader(true);
+                  if (window.confirm("Are you sure you want to delete")) {
+                    const res_exam = await axios.delete(
+                      `http://localhost:8000/api/v1/exam/${row._id}`
+                    );
+                    const res_course = await axios.delete(
+                      `http://localhost:8000/api/v1/examTaken?id=${row.stdId._id}&course=${row.course}`
+                    );
+
+                    succssAlert("Successfully Deleted");
+                    setLoader(false);
+                    setFilterExams((prevState) =>
+                      prevState.filter((item) => {
+                        return item._id != row._id;
+                      })
+                    );
+                  }
+                  setLoader(false);
+                } catch (error) {
+                  setLoader(false);
+                  console.log(error);
+                }
+              }}
+            />
+          </button>
+        </div>
+      ),
+    },
+  ];
+
   useEffect(() => {
     getAllData();
   }, []);
@@ -266,9 +358,13 @@ const ViewAllStudents = () => {
     const feeResult = fee.filter((ele) => {
       return ele.fullName.toLowerCase().match(feeSearch.toLowerCase());
     });
+    const examResult = exams.filter((ele) => {
+      return ele.fullName.toLowerCase().match(examSearch.toLowerCase());
+    });
+    setFilterExams(examResult)
     setFilterStudents(result);
     setFeeFilterStudents(feeResult);
-  }, [search, feeSearch]);
+  }, [search, feeSearch, examSearch]);
 
   const { login_session } = Auth();
 
@@ -331,6 +427,33 @@ const ViewAllStudents = () => {
                     placeholder="Search By First Name"
                     value={feeSearch}
                     onChange={(e) => setFeeSearch(e.target.value)}
+                  />
+                </div>
+              }
+            />
+          </div>
+        </div>
+
+        <div className="view_fee_container">
+          <div className="fee_students_header">
+            <h1>Examination</h1>
+          </div>
+
+          <div className="table_wrapper">
+            <DataTable
+              columns={examColumns}
+              data={filterExams}
+              pagination
+              fixedHeader
+              highlightOnHover
+              subHeader
+              subHeaderComponent={
+                <div className="input_wrapper">
+                  <input
+                    type="search"
+                    placeholder="Search By First Name"
+                    value={examSearch}
+                    onChange={(e) => setExamSearch(e.target.value)}
                   />
                 </div>
               }

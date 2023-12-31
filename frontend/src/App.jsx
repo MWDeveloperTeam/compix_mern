@@ -25,7 +25,9 @@ import {
   Create_Fee,
   FeeHistory,
   Fee,
+  Exam_guides,
 } from "../src/Pages/index";
+import Demo from "./Components/Courses/Demo";
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -39,10 +41,12 @@ const App = () => {
         <Store.Provider value={providerData}>
           <Routes>
             <Route path="*" element={<Page_Not_Found />} />
+            <Route path="/demo" element={<Demo />} />
             <Route path={URL.Home} element={<Main />} />
             <Route path={URL.QuizModel} element={<QuizModel />} />
             <Route path={URL.Quiz} element={<Quiz />} />
             <Route path={URL.Result} element={<QuizResult />} />
+            <Route path={URL.Exam_guides} element={<Exam_guides />} />
             <Route
               path={URL.Login}
               element={

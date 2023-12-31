@@ -3,17 +3,22 @@ import { Constant } from '../../constant';
 
 export const Menu = styled.section`
   width: 85%;
-  height: calc(100% - 6rem);
-  position: fixed;
+  /* height: calc(100% - 6rem); */
+  height: calc(100vh - 6rem);
+  position: fixed !important;
   left: 0;
   top: 6rem;
   display: flex;
   transition: ease-in-out 0.3s;
-  z-index: 9999999999;
+  z-index: 9622656565666666;
   transform: translate(${props => props.translate});
   transition: ease-in-out 0.3s;
   overflow-y: scroll;
-  background-color: #000;
+  /* background-color: #000;  */
+
+  &::-webkit-scrollbar {
+  width: 0px;
+}
 
   .main_container {
     width: 100%;
@@ -29,7 +34,7 @@ export const Menu = styled.section`
       flex-direction: column;
       padding: 3rem 5rem;
       li {
-        border-bottom: 0.1rem solid #333;
+        border-bottom: 0.1rem solid #fff;
         width: 100%;
         text-align: center;
         padding: 1rem;

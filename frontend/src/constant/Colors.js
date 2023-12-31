@@ -5,6 +5,7 @@ export const Colors = {
   seconderyColorLight: "#e6b800",
   // mainColor: "#040D12",
   mainColor: "#27374D",
+  lightBackgroundColor: "#FDFCF6"
 };
 
 export const AdminColors = {
